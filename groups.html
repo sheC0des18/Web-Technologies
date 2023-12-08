@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+    position: relative; /* Establish a positioning context for pseudo-elements */
+}
+
+/* Blur the entire body background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(logo.jpg); /* Specify the path to your image file */
+   /* background-size: cover; /* Ensures the image covers the entire background */
+    
+    filter: blur(5px); /* Adjust the blur intensity as needed */
+    z-index: -1; /* Place it behind the body content */
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.container {
+  padding: 0 16px;
+  flex: 1; /* Allow container to grow and take remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Align items with equal space between them */
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #aa2004;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+h2 {
+      text-align: center;
+      margin-top: 50px; /* Adjust the margin-top value based on your preference */
+    }
+
+    ul {
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  background-color: #333; /* Background color for the navigation bar */
+  padding: 15px; /* Padding for the navigation bar */
+  text-align: center; /* Center-align text within the navigation bar */
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: inline-block;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+li a:hover {
+  background-color: #111;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a>ENU Group SignUp</a></li>
+</ul> 
+  
+<h2>Welcome! Meet your Group </h2>
+<br>
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2>Jane Doe</h2>
+        <h3>BENG(HONS) CYBERSECURITY AND SECURITY</h3>
+        <p>3rd year student with skills in digital forensics and networking.</p>
+        <p>12345@student.uni.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2>Mike Ross</h2>
+        <h3>BSC(HONS) WEB DESIGN AND DEVELOPMENT</h3>
+        <p>Currently in 3rd year with a particular interest in front-end development and web design.</p>
+        <p>67890@student.uni.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2>John Doe</h2>
+        <h3>BSC(HONS) COMPUTER SCIENCE</h3>
+        <p>A 3rd year student proficient with Python and C++.</p>
+        <p>03726@student.uni.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

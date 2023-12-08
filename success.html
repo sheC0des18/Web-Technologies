@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<style>
+    body {
+    position: relative; /* Establish a positioning context for pseudo-elements */
+}
+
+/* Blur the entire body background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(logo.jpg); /* Specify the path to your image file */
+   /* background-size: cover; /* Ensures the image covers the entire background */
+    
+    filter: blur(5px); /* Adjust the blur intensity as needed */
+    z-index: -1; /* Place it behind the body content */
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  background-color: #333; /* Background color for the navigation bar */
+  padding: 15px; /* Padding for the navigation bar */
+  text-align: center; /* Center-align text within the navigation bar */
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: inline-block;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+</style>
+<body>
+<ul>
+    <li><a>ENU Group SignUp</a></li>
+</ul>   
+
+<h1>You have successfully signed up for your group!</h1>
+
+<button type="button" onclick="alert('You will receive an email containing the details and you can click on the link that will be attached to meet your group!')">Click Me!</button>
+ 
+</body>
+</html>

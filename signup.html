@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+  body {
+    position: relative; /* Establish a positioning context for pseudo-elements */
+}
+
+/* Blur the entire body background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(logo.jpg); /* Specify the path to your image file */
+   /* background-size: cover; /* Ensures the image covers the entire background */
+    
+    filter: blur(5px); /* Adjust the blur intensity as needed */
+    z-index: -1; /* Place it behind the body content */
+}
+
+  input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  a[type=button] {
+    display: none; /* Initially hide the submit button */
+    width: 100%;
+    background-color: #aa2004;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  a[type=button]:hover {
+    background-color: #45a049;
+  }
+
+  div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  ul {
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  background-color: #333; /* Background color for the navigation bar */
+  padding: 15px; /* Padding for the navigation bar */
+  text-align: center; /* Center-align text within the navigation bar */
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: inline-block;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+li a:hover {
+  background-color: #111;
+}
+</style>
+<body>
+
+<ul>
+  <li><a>ENU Group SignUp</a></li>
+</ul>
+
+<h3>Signup to join a group</h3>
+
+<div>
+  <label for="fname">First Name</label>
+  <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+  <label for="lname">Last Name</label>
+  <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+  <label for="email">Email</label>
+  <input type="text" id="email" name="email" placeholder="Your email..">
+
+  <label for="group">Group Number</label>
+  <select id="Group" name="groupNumber">
+    <option value="1">Group 1</option>
+    <option value="2">Group 2</option>
+    <option value="3">Group 3</option>
+    <option value="4">Group 4</option>
+    <option value="5">Group 5</option>
+  </select>
+  
+  <!-- Submit button as a link with hardcoded href -->
+  <a href="#" id="submitButton" type="button">Submit</a>
+</div>
+
+<script>
+// Update the link when a group is selected
+document.getElementById("Group").addEventListener("change", function() {
+  var selectedGroup = this.value;
+  var submitButton = document.getElementById("submitButton");
+  
+  // Set the hardcoded href attribute based on the selected group
+  if (selectedGroup !== "") {
+    switch (selectedGroup) {
+      case "1":
+        submitButton.href = "groups.html";
+        break;
+      case "2":
+        submitButton.href = "error.html";
+        break;
+      case "3":
+        submitButton.href = "success.html";
+        break;
+      case "4":
+        submitButton.href = "error.html";
+        break;
+      case "5":
+        submitButton.href = "success.html";
+        break;
+      default:
+        // Handle other cases or provide a default URL
+        break;
+    }
+    submitButton.style.display = "block"; // Show the submit button
+  } else {
+    submitButton.style.display = "none"; // Hide the submit button if no group is selected
+  }
+});
+</script>
+
+</body>
+</html>

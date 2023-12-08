@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+    position: relative; /* Establish a positioning context for pseudo-elements */
+}
+
+/* Blur the entire body background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(logo.jpg); /* Specify the path to your image file */
+   /* background-size: cover; /* Ensures the image covers the entire background */
+    
+    filter: blur(5px); /* Adjust the blur intensity as needed */
+    z-index: -1; /* Place it behind the body content */
+}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #aa2004;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* The Go Back Button */
+.goBack {
+  display: none; /* Initially hidden */
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  background-color: #333; /* Background color for the navigation bar */
+  padding: 15px; /* Padding for the navigation bar */
+  text-align: center; /* Center-align text within the navigation bar */
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: inline-block;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a>ENU Group SignUp</a></li>
+</ul>
+  
+<h2>Uh Oh!</h2>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Click Me!</button>
+<button id="goBackBtn" class="goBack" onclick="goBack()">Go Back</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <p>This group is full, choose a different group</p>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the buttons
+var btn = document.getElementById("myBtn");
+var goBackBtn = document.getElementById("goBackBtn");
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+function closeModal() {
+  modal.style.display = "none";
+  // Show the "Go Back" button
+  goBackBtn.style.display = "inline-block";
+}
+
+// When the user clicks the "Go Back" button, go to another page
+function goBack() {
+  window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
