@@ -2,7 +2,7 @@
 
 A web application designed to simplify group sign-ups for students and tutors in an educational environment. This project demonstrates an understanding of server-side web technologies using **Python** and **Flask**. 
 
-[Live Demo](https://shec0des18.github.io/advancedweb-tech_set09103/)
+[Live Demo](https://shec0des18.github.io/Web-Technologies/)
 
 ---
 
